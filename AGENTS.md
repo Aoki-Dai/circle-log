@@ -45,7 +45,7 @@
 - Language: TypeScript
 - Framework: React, Vite
 - CSS: Tailwind CSS, shadcn/ui
-- Test: Vitest
+- Test: Vitest, Playwright
 - Runtime: Node.js
 - Lint/Format: ESLint, Prettier
 - テスト実行: `npm test`

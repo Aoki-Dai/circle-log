@@ -18,7 +18,7 @@
 | UIライブラリ | shadcn/ui |
 | スタイリング | Tailwind CSS |
 | 状態管理 | React hooks（useState / useReducer） |
-| テスト | Vitest |
+| テスト | Vitest, Playwright |
 | ビルド | `npm run build` でエラーなし |
 | 開発サーバー | `npm run dev` で localhost:5173 で起動 |
 

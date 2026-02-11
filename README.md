@@ -1,19 +1,19 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+このテンプレートは、Vite 上で React を HMR といくつかの ESLint ルール付きで動かすための最小構成を提供します。
 
-Currently, two official plugins are available:
+現在、公式プラグインは 2 つあります。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) は Fast Refresh のために [Babel](https://babeljs.io/)（[rolldown-vite](https://vite.dev/guide/rolldown) で使う場合は [oxc](https://oxc.rs)）を使用します
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) は Fast Refresh のために [SWC](https://swc.rs/) を使用します
 
 ## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+このテンプレートでは、開発時およびビルド時のパフォーマンスへの影響を考慮し、React Compiler は有効化されていません。追加方法は [このドキュメント](https://react.dev/learn/react-compiler/installation) を参照してください。
 
-## Expanding the ESLint configuration
+## ESLint 設定の拡張
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+本番向けアプリケーションを開発する場合は、型を考慮した lint ルールを有効にするため、設定を更新することをおすすめします。
 
 ```js
 export default defineConfig([
@@ -21,29 +21,29 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
+      // 他の設定...
 
-      // Remove tseslint.configs.recommended and replace with this
+      // tseslint.configs.recommended を削除し、これに置き換える
       tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
+      // より厳しいルールにする場合はこちら
       tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+      // スタイル系ルールを追加する場合はこちら（任意）
       tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
+      // 他の設定...
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // 他のオプション...
     },
   },
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+React 固有の lint ルールを使うために、[eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) と [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) をインストールすることもできます。
 
 ```js
 // eslint.config.js
@@ -55,10 +55,10 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
+      // 他の設定...
+      // React 向け lint ルールを有効化
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
+      // React DOM 向け lint ルールを有効化
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -66,7 +66,7 @@ export default defineConfig([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // 他のオプション...
     },
   },
 ])

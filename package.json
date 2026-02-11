@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest run src/__tests__",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run src/__tests__",
+    "test:e2e": "playwright test --reporter=line",
     "lint": "eslint .",
     "preview": "vite preview"
   },

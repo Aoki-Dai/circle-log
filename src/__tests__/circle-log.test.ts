@@ -48,7 +48,7 @@ describe('バリデーション', () => {
   it('境界値: 0時59分1分は有効', () => {
     expect(
       validateDraft({
-        categoryId: 'c-sleep',
+        categoryId: '8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1',
         startHour: '0',
         startMinute: '59',
         durationMinutes: '1',
@@ -68,7 +68,7 @@ describe('バリデーション', () => {
 
     expect(
       validateDraft({
-        categoryId: 'c-sleep',
+        categoryId: '8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1',
         startHour: '24',
         startMinute: '0',
         durationMinutes: '60',
@@ -77,7 +77,7 @@ describe('バリデーション', () => {
 
     expect(
       validateDraft({
-        categoryId: 'c-sleep',
+        categoryId: '8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1',
         startHour: '23',
         startMinute: '60',
         durationMinutes: '60',
@@ -86,7 +86,7 @@ describe('バリデーション', () => {
 
     expect(
       validateDraft({
-        categoryId: 'c-sleep',
+        categoryId: '8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1',
         startHour: '23',
         startMinute: '30',
         durationMinutes: '0',

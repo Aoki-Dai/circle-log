@@ -8,7 +8,9 @@ test('追加・削除の基本フロー', async ({ page }) => {
 
   await expect(page.getByTestId('add-dialog-title')).toHaveText('活動を追加')
 
-  await page.getByTestId('select-category').selectOption('c-sleep')
+  await page
+    .getByTestId('select-category')
+    .selectOption('8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1')
   await page.getByTestId('input-start-hour').fill('0')
   await page.getByTestId('input-start-minute').fill('0')
   await page.getByTestId('input-duration').fill('60')

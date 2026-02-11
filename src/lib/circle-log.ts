@@ -22,12 +22,12 @@ export type ActivityDraft = {
 }
 
 export const DEFAULT_CATEGORIES: Category[] = [
-  { id: 'c-sleep', name: '睡眠', color: '#3B82F6' },
-  { id: 'c-work', name: '仕事', color: '#EF4444' },
-  { id: 'c-meal', name: '食事', color: '#F59E0B' },
-  { id: 'c-break', name: '休憩', color: '#10B981' },
-  { id: 'c-exercise', name: '運動', color: '#8B5CF6' },
-  { id: 'c-move', name: '移動', color: '#6B7280' },
+  { id: '8f5f6d1a-4c2b-4d6e-9f20-2cb35c8a71a1', name: '睡眠', color: '#3B82F6' },
+  { id: '2b3c4d5e-6f70-4a81-8b92-1c3d4e5f6071', name: '仕事', color: '#EF4444' },
+  { id: '3c4d5e6f-7081-4b92-9ca3-2d4e5f607182', name: '食事', color: '#F59E0B' },
+  { id: '4d5e6f70-8192-4ca3-8db4-3e5f60718293', name: '休憩', color: '#10B981' },
+  { id: '5e6f7081-92a3-4db4-9ec5-4f60718293a4', name: '運動', color: '#8B5CF6' },
+  { id: '6f708192-a3b4-4ec5-8fd6-50718293a4b5', name: '移動', color: '#6B7280' },
 ]
 
 export const STORAGE_KEY = 'circleLog_activities'

@@ -23,14 +23,14 @@
 - [x] `npm run build` 通過
 
 ## 提出要件・仕様の未達
-- [ ] `npm test` で全テスト（Vitest + Playwright）を実行可能にする
-- [ ] `Category.id` を UUID v4 にする
+- [x] `npm test` で全テスト（Vitest + Playwright）を実行可能にする
+- [x] `Category.id` を UUID v4 にする
 
 ## 次アクション
-- [ ] `package.json` のテストスクリプトを再設計（`npm test` に unit + e2e を統合）
-- [ ] デフォルトカテゴリIDを UUID v4 へ変更
-- [ ] 変更後に再検証
-  - [ ] `npm test`
-  - [ ] `npx tsc --noEmit`
-  - [ ] `npm run build`
-  - [ ] `npx playwright test`
+- [x] `package.json` のテストスクリプトを再設計（`npm test` に unit + e2e を統合）
+- [x] デフォルトカテゴリIDを UUID v4 へ変更
+- [x] 変更後に再検証
+  - [x] `npm test`
+  - [x] `npx tsc --noEmit`
+  - [x] `npm run build`
+  - [x] `npx playwright test`

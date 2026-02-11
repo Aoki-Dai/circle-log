@@ -1,18 +1,26 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test'
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('追加・削除の基本フロー', async ({ page }) => {
+  await page.goto('/')
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  await expect(page.getByTestId('circle-chart')).toBeVisible()
+  await page.getByTestId('add-activity-btn').click()
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await expect(page.getByTestId('add-dialog-title')).toHaveText('活動を追加')
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  await page.getByTestId('select-category').selectOption('c-sleep')
+  await page.getByTestId('input-start-hour').fill('0')
+  await page.getByTestId('input-start-minute').fill('0')
+  await page.getByTestId('input-duration').fill('60')
+  await page.getByTestId('save-activity-btn').click()
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+  await expect(page.getByTestId('activity-list')).toContainText('睡眠')
+  await expect(page.locator('[data-testid^="segment-"]')).toHaveCount(1)
+
+  const deleteButton = page.locator('[data-testid^="delete-activity-"]')
+  await deleteButton.first().click()
+  await expect(page.getByTestId('delete-confirm-message')).toContainText('削除しますか')
+  await page.getByTestId('confirm-delete-btn').click()
+
+  await expect(page.getByTestId('empty-message')).toHaveText('活動が記録されていません')
+})
